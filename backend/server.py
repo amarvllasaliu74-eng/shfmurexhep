@@ -274,6 +274,34 @@ async def delete_announcement(announcement_id: str):
     await db.announcements.delete_one({"id": announcement_id})
     return {"success": True}
 
+# Hero Slides endpoints
+@api_router.get("/hero-slides", response_model=List[HeroSlide])
+async def get_hero_slides():
+    slides = await db.hero_slides.find({"active": True}, {"_id": 0}).sort("order", 1).to_list(100)
+    for s in slides:
+        if isinstance(s.get('created_at'), str):
+            s['created_at'] = datetime.fromisoformat(s['created_at'])
+    return slides
+
+@api_router.post("/hero-slides", response_model=HeroSlide)
+async def create_hero_slide(slide: HeroSlide):
+    doc = slide.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.hero_slides.insert_one(doc)
+    return slide
+
+@api_router.put("/hero-slides/{slide_id}")
+async def update_hero_slide(slide_id: str, slide: HeroSlide):
+    doc = slide.model_dump()
+    doc['created_at'] = doc['created_at'].isoformat()
+    await db.hero_slides.update_one({"id": slide_id}, {"$set": doc})
+    return {"success": True}
+
+@api_router.delete("/hero-slides/{slide_id}")
+async def delete_hero_slide(slide_id: str):
+    await db.hero_slides.delete_one({"id": slide_id})
+    return {"success": True}
+
 # Include the router in the main app
 app.include_router(api_router)
 
