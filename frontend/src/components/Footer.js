@@ -39,6 +39,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
           <p>&copy; {new Date().getFullYear()} Sh.F.M.U. "Rexhep Elmazi". Të gjitha të drejtat e rezervuara.</p>
+          <p className="text-xs mt-2 opacity-60">Punuar nga Amar Vllasaliu</p>
         </div>
       </div>
     </footer>
