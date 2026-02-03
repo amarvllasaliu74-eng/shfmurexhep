@@ -101,7 +101,7 @@ const Contact = () => {
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Lokacioni</h2>
               <div className="bg-white rounded-xl shadow-lg overflow-hidden" style={{ height: '600px' }}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2948.8!2d21.4679!3d42.4639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDLCsDI3JzUwLjAiTiAyMcKwMjgnMDQuNCJF!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.1!2d21.4676462!3d42.4729356!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13548d365d33c9c1%3A0xa4fd108a16f19773!2sShkolla%20Rexhep%20Elmazi!5e0!3m2!1sen!2s!4v1234567890123!5m2!1sen!2s"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
