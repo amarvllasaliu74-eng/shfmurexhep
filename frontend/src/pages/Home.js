@@ -63,6 +63,9 @@ const Home = () => {
       {/* Hero Slideshow */}
       {heroSlides.length > 0 && <HeroSlideshow slides={heroSlides} />}
 
+      {/* News Ticker - menjëherë nën slideshow */}
+      <NewsTicker announcements={announcements} />
+
       {/* Student of the Month */}
       {studentOfMonth && (
         <section className="py-16 bg-gradient-to-b from-yellow-50 to-white">
