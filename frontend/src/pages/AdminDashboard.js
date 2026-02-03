@@ -9,19 +9,21 @@ import { TopStudentsTab } from '@/components/admin/TopStudentsTab';
 import { ActivitiesTab } from '@/components/admin/ActivitiesTab';
 import { TournamentsTab } from '@/components/admin/TournamentsTab';
 import { AnnouncementsTab } from '@/components/admin/AnnouncementsTab';
+import { HeroSlidesTab } from '@/components/admin/HeroSlidesTab';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('student-of-month');
+  const [activeTab, setActiveTab] = useState('hero-slides');
   const [data, setData] = useState({
     students: [],
     topStudents: [],
     activities: [],
     tournaments: [],
-    announcements: []
+    announcements: [],
+    heroSlides: []
   });
 
   useEffect(() => {
