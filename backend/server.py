@@ -28,6 +28,7 @@ app = FastAPI()
 static_dir = ROOT_DIR / "static"
 static_dir.mkdir(exist_ok=True)
 app.mount("/static", StaticFiles(directory=str(static_dir)), name="static")
+app.mount("/api/static", StaticFiles(directory=str(static_dir)), name="api_static")
 
 # Create a router with the /api prefix
 api_router = APIRouter(prefix="/api")
