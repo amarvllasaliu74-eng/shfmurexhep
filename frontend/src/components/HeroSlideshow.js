@@ -44,7 +44,7 @@ const HeroSlideshow = ({ slides }) => {
           >
             <div className="relative h-full">
               <img
-                src={`${BACKEND_URL}${slide.image_url}`}
+                src={slide.image_url.startsWith('http') ? slide.image_url : `${BACKEND_URL}${slide.image_url}`}
                 alt={slide.title}
                 className="w-full h-full object-cover"
               />
