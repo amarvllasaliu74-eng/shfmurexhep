@@ -71,10 +71,18 @@ const Contact = () => {
 
                 <div className="bg-gradient-to-br from-blue-50 to-yellow-50 rounded-xl shadow-md p-6">
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">Orë të Punës</h3>
-                  <div className="space-y-2 text-gray-700">
-                    <p><span className="font-semibold">E Hënë - E Premte:</span> 08:00 - 16:00</p>
-                    <p><span className="font-semibold">E Shtunë:</span> E mbyllur</p>
-                    <p><span className="font-semibold">E Diel:</span> E mbyllur</p>
+                  <div className="space-y-3 text-gray-700">
+                    <div>
+                      <p className="font-semibold text-blue-600 mb-1">Niveli i Lartë (Klasat 6-9):</p>
+                      <p><span className="font-semibold">E Hënë - E Premte:</span> 07:30 - 12:35</p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-blue-600 mb-1">Niveli i Ulët (Klasat 1-5):</p>
+                      <p><span className="font-semibold">E Hënë - E Premte:</span> 13:00 - 17:10</p>
+                    </div>
+                    <div className="pt-2 border-t">
+                      <p><span className="font-semibold">E Shtunë & E Diel:</span> E mbyllur</p>
+                    </div>
                   </div>
                 </div>
               </div>
