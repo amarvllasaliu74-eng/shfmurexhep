@@ -45,3 +45,7 @@ htmlcov/
 venv/
 env/
 ENV/
+-e 
+# Environment files
+*.env
+*.env.*
