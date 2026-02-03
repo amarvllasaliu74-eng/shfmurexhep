@@ -47,18 +47,17 @@ const Home = () => {
       <section className="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6" data-testid="hero-title">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-semibold mb-6" data-testid="hero-title">
               Mirësevini në Shkollën<br />
               "Rexhep Elmazi"
             </h1>
-            <p className="text-xl sm:text-2xl mb-4 text-blue-100">Gjilan, Kosovë</p>
-            <p className="text-lg max-w-2xl mx-auto text-blue-50">
-              Një institucion arsimor që përqendrohet në zhvillimin e plotë të çdo nxënësi,<br/>
-              duke i pergatitur atë për sf dat e ardhshme.
-            </p>
+            <p className="text-xl sm:text-2xl text-blue-100">Gjilan, Kosovë</p>
           </div>
         </div>
       </section>
+
+      {/* Hero Slideshow */}
+      {heroSlides.length > 0 && <HeroSlideshow slides={heroSlides} />}
 
       {/* Student of the Month */}
       {studentOfMonth && (
