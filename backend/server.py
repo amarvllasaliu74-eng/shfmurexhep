@@ -140,7 +140,7 @@ async def upload_file(file: UploadFile = File(...)):
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
     
-    return {"url": f"/static/uploads/{unique_filename}"}
+    return {"url": f"/api/static/uploads/{unique_filename}"}
 
 # Student of Month endpoints
 @api_router.get("/student-of-month", response_model=List[StudentOfMonth])
