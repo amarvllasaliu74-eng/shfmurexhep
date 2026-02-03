@@ -3,6 +3,7 @@ import axios from 'axios';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import HeroSlideshow from '@/components/HeroSlideshow';
+import NewsTicker from '@/components/NewsTicker';
 import { Calendar, Trophy, Star, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -14,6 +15,7 @@ const Home = () => {
   const [activities, setActivities] = useState([]);
   const [tournaments, setTournaments] = useState([]);
   const [heroSlides, setHeroSlides] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -21,11 +23,12 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const [studentsRes, activitiesRes, tournamentsRes, slidesRes] = await Promise.all([
+      const [studentsRes, activitiesRes, tournamentsRes, slidesRes, announcementsRes] = await Promise.all([
         axios.get(`${API}/student-of-month`),
         axios.get(`${API}/activities`),
         axios.get(`${API}/tournaments`),
-        axios.get(`${API}/hero-slides`)
+        axios.get(`${API}/hero-slides`),
+        axios.get(`${API}/announcements`)
       ]);
 
       if (studentsRes.data.length > 0) {
@@ -34,6 +37,7 @@ const Home = () => {
       setActivities(activitiesRes.data.slice(0, 3));
       setTournaments(tournamentsRes.data.slice(0, 3));
       setHeroSlides(slidesRes.data);
+      setAnnouncements(announcementsRes.data);
     } catch (error) {
       console.error('Error fetching data:', error);
     }
