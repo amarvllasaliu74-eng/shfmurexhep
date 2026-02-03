@@ -89,6 +89,18 @@ class Announcement(BaseModel):
     text: str
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 
+class HeroSlide(BaseModel):
+    model_config = ConfigDict(extra="ignore")
+    id: str = Field(default_factory=lambda: str(uuid.uuid4()))
+    title: str
+    description: str
+    image_url: str
+    link: Optional[str] = None
+    slide_type: str = "event"
+    order: int = 0
+    active: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+
 # Auth endpoints
 @api_router.post("/auth/login")
 async def admin_login(credentials: AdminLogin):
