@@ -90,13 +90,18 @@ const AdminDashboard = () => {
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
-          <TabsList className="grid grid-cols-5 w-full mb-8">
+          <TabsList className="grid grid-cols-6 w-full mb-8">
+            <TabsTrigger value="hero-slides">Hero Slideshow</TabsTrigger>
             <TabsTrigger value="student-of-month">Student of Month</TabsTrigger>
             <TabsTrigger value="top-students">Top Students</TabsTrigger>
             <TabsTrigger value="activities">Activities</TabsTrigger>
             <TabsTrigger value="tournaments">Tournaments</TabsTrigger>
             <TabsTrigger value="announcements">Announcements</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="hero-slides">
+            <HeroSlidesTab data={data.heroSlides} onRefresh={fetchAllData} />
+          </TabsContent>
 
           <TabsContent value="student-of-month">
             <StudentOfMonthTab data={data.students} onRefresh={fetchAllData} />
