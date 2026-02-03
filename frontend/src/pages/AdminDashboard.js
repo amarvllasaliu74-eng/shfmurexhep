@@ -42,7 +42,8 @@ const AdminDashboard = () => {
         axios.get(`${API}/top-students`),
         axios.get(`${API}/activities`),
         axios.get(`${API}/tournaments`),
-        axios.get(`${API}/announcements`)
+        axios.get(`${API}/announcements`),
+        axios.get(`${API}/hero-slides`)
       ]);
       
       setData({
@@ -50,7 +51,8 @@ const AdminDashboard = () => {
         topStudents: responses[1].data,
         activities: responses[2].data,
         tournaments: responses[3].data,
-        announcements: responses[4].data
+        announcements: responses[4].data,
+        heroSlides: responses[5].data
       });
     } catch (error) {
       console.error('Error fetching data:', error);
