@@ -84,7 +84,7 @@ const Home = () => {
               {studentOfMonth.photo_url && (
                 <div className="mb-6 flex justify-center">
                   <img 
-                    src={`${BACKEND_URL}${studentOfMonth.photo_url}`} 
+                    src={studentOfMonth.photo_url.startsWith('http') ? studentOfMonth.photo_url : `${BACKEND_URL}${studentOfMonth.photo_url}`}
                     alt={studentOfMonth.name}
                     className="w-48 h-48 object-cover rounded-full border-4 border-yellow-400 shadow-lg"
                     data-testid="student-photo"
