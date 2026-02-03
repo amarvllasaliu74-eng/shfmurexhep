@@ -89,7 +89,13 @@ export const StudentOfMonthTab = ({ data, onRefresh }) => {
           <div>
             <label className="block text-sm font-semibold mb-2">Photo</label>
             <Input type="file" accept="image/*" onChange={(e) => e.target.files[0] && handleUpload(e.target.files[0])} />
-            {form.photo_url && <img src={`${BACKEND_URL}${form.photo_url}`} alt="Preview" className="mt-2 w-32 h-32 object-cover rounded-lg" />}
+            {form.photo_url && (
+              <img 
+                src={form.photo_url.startsWith('http') ? form.photo_url : `${BACKEND_URL}${form.photo_url}`}
+                alt="Preview" 
+                className="mt-2 w-32 h-32 object-cover rounded-lg" 
+              />
+            )}
           </div>
           <div className="flex space-x-2">
             <Button type="submit"><Save className="mr-2" size={18} />{editing ? 'Update' : 'Add'}</Button>
